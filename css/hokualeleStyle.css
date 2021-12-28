@@ -1,0 +1,663 @@
+/*importing fonts*/
+@import url("https://fonts.googleapis.com/css2?family=Acme&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  --white: #e1e1e1;
+  --gray: #6b6b6b;
+  --orange: #d77729;
+  --teal: #638481;
+}
+/*OVERALL WEBPAGE: SHARED THROUGH ALL VIEWPORT SIZES*/
+html {
+  width: 100%;
+}
+body {
+  width: 100%;
+  line-height: 1.6em;
+  font-family: "Montserrat", serif;
+  background-color: var(--white);
+}
+.row {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  width: 90%;
+  margin: auto;
+  padding: 1.5em 0;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+ul {
+  list-style-type: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  text-align: center;
+}
+table {
+  display: block;
+  margin: auto;
+  border-collapse: collapse;
+  padding: 10px;
+}
+th {
+  background-color: var(--teal);
+  color: #fff;
+}
+td,
+th {
+  border: solid #fff 1px;
+  padding: 8px;
+}
+tr:hover {
+  background-color: #ddd;
+}
+form {
+  padding: 1em;
+  text-align: center;
+}
+form label,
+form input {
+  margin: 1em;
+}
+#pageHeader {
+  /*HEADERS FOUND ON GALLERY, CONTACT, AND LEGAL PAGES*/
+  padding: 2em;
+  font-family: "Acme", serif;
+  font-size: 1.3em;
+  background-color: var(--orange);
+  color: #fff;
+}
+/******************************************
+*               Phone size                *
+******************************************/
+/*NAVIGATION*/
+#navBar {
+  display: none;
+}
+#hamburger {
+  position: fixed;
+  z-index: 99;
+  top: 1em;
+  right: 1em;
+  font-size: 2em;
+  color: #fff;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+#open-icon {
+  color: var(--black);
+}
+#close-icon {
+  display: none;
+  color: var(--white);
+}
+.hamburger-content {
+  transform: translateX(100%);
+  transition: transform 0.5s;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 98;
+  font-size: 3em;
+  line-height: 2em;
+  padding-top: 2em;
+  padding-left: 1em;
+  background: var(--teal);
+  color: #fff;
+}
+.show-hamburger {
+  transform: translateX(0%);
+}
+
+/*FOOTER*/
+.mainFooter {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+  text-align: center;
+  font-size: 0.9em;
+  background-color: var(--gray);
+  color: #fff;
+}
+.footerSection {
+  /*sections: contact, sitemap, address*/
+  padding: 1em;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.contactIcon {
+  max-width: 50px;
+  min-width: 40px;
+  padding: 0.5em;
+}
+#sitemap,
+#address {
+  margin: 1em 0;
+}
+.mainFooter span {
+  /*orange bar at bottom with copyright info*/
+  width: 100%;
+  border-radius: 5px;
+  margin-top: 1em;
+  padding: 1em;
+  background-color: var(--orange);
+}
+
+/*HOME PAGE ELEMENTS*/
+/*HEADER*/
+.mainHeader img {
+  width: 100%;
+}
+#headerLaptop {
+  /*THERE'S DIFFERENT IMAGES FOR THE HEADER FOR VIEWPORT SIZE*/
+  display: none;
+}
+.mainHeader .headerBar {
+  /*ORANGE BAR UNDER MAIN HEADER IMAGE*/
+  position: relative;
+  top: -10px;
+  height: 50px;
+  background-color: var(--orange);
+}
+/*QUICK ABOUT*/
+.quickAbout {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--white);
+}
+#kalalea {
+  /*outline image of mountain*/
+  width: 70%;
+  margin: 2em 0;
+}
+.quickAbout h2 {
+  font-family: "Acme", serif;
+  text-transform: uppercase;
+  font-size: 1.6em;
+}
+.quickAbout p {
+  padding: 1.2em 0;
+}
+#moreAboutButton {
+  transition: 0.3s ease;
+  display: inline-block;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  font-family: "Acme", serif;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  background-color: var(--teal);
+  color: #fff;
+}
+#moreAboutButton:hover {
+  background-color: #84a9a5;
+}
+.asideImage img {
+  display: block;
+  width: 90%;
+  margin: 2em auto;
+  border: double #fff 10px;
+}
+/*QUICK SIGNUP*/
+.signUp {
+  text-align: center;
+  background-color: var(--gray);
+  color: #fff;
+}
+#signupText {
+  line-height: 1.7em;
+  font-size: 1em;
+}
+#signupText a {
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+#signupButton {
+  transition: 0.3s ease;
+  display: inline-block;
+  margin: 1em auto;
+  padding: 0.5em 1em;
+  font-family: "Acme", serif;
+  text-transform: uppercase;
+  border: solid #fff 3px;
+}
+#signupButton:hover {
+  padding: 0.6em 1.1em;
+}
+/*PHOTO SLIDESHOW, NOT OPERATIONAL FOR NOW*/
+#banner {
+  width: 100%;
+}
+/*RECENT NEWS AND EVENTS*/
+#newsEvents {
+  /*section holding the news articles*/
+  background-color: var(--teal);
+  color: #fff;
+}
+.newsBlock {
+  /*each news article- 3 total*/
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  margin: 2em auto;
+  padding: 2em 1em;
+  text-align: center;
+  border: solid #fff 5px;
+  position: relative;
+}
+.newsBlock h5 {
+  font-size: 1.2em;
+  padding: 1em;
+}
+.newsBlock p {
+  padding: 1em 0;
+}
+.newsButton {
+  transition: 0.3s ease;
+  display: inline-block;
+  position: absolute;
+  bottom: -1.5em;
+  left: 40%;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  font-family: "Acme", serif;
+  text-align: center;
+  background-color: var(--orange);
+  color: #fff;
+}
+.newsButton:hover {
+  background-color: #db965d;
+}
+
+/*ABOUT PAGE ELEMENTS*/
+#aboutHeader {
+  width: 100%;
+  min-height: 35vh;
+  text-align: right;
+  background-image: url("../images/bannerKalalea.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+#aboutHeader p {
+  /*TEXT THAT SAYS "ANAHOLA, HI," POSITIONED AT BOTTOM RIGHT*/
+  color: #fff;
+  font-family: "Montserrat", serif;
+  font-size: 2em;
+  text-transform: uppercase;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 1em;
+}
+#missionStatement {
+  text-align: center;
+  border: dotted #fff 5px;
+  background-color: var(--orange);
+  color: #fff;
+}
+#practice {
+  /*aside element containing practice schedule*/
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+#huddleImg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#huddleImg img {
+  border: solid #fff 5px;
+}
+.aboutArticle {
+  /*each of the 3 about articles at the bottom of the page*/
+  border-left: solid #fff 2px;
+  border-bottom: solid #fff 2px;
+  background-color: var(--teal);
+  color: #fff;
+}
+.aboutArticle .container {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.aboutArticle p,
+.aboutArticle h3 {
+  padding-bottom: 1em;
+}
+#aboutArticleLink {
+  /*link embedded in keiki paddling paragraph*/
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.aboutButton {
+  transition: 0.3s ease;
+  display: inline-block;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  text-align: center;
+  font-family: "Acme", serif;
+  background-color: var(--white);
+  color: var(--teal);
+}
+.aboutButton:hover {
+  background-color: #84a9a5;
+  color: #fff;
+}
+
+/*GALLERY PAGE ELEMENTS*/
+.gallery {
+  /*OVERALL GALLERY*/
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  padding: 2em;
+  background-color: var(--white);
+}
+.galleryImage,
+.galleryVideo {
+  /*EACH OF THE INDIVIDUAL PICS/VIDEOS*/
+  transition: 0.3s ease;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 90%;
+  margin: 1em 0;
+  background-color: #fff;
+  color: #87695f;
+  box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.2); /* shadow around pictures, format: x-offset, y-offset, blur-radius, spread-radius, color*/
+}
+.galleryImage:hover,
+.galleryVideo:hover {
+  background-color: rgba(99, 132, 129, 0.5);
+  color: #fff;
+}
+.galleryVideo iframe,
+.galleryImage img {
+  /*embedded Youtube videos*/
+  width: 100%;
+  height: auto;
+}
+iframe {
+  border: none;
+}
+.gallery figure {
+  padding: 0.8em;
+}
+.gallery figcaption {
+  padding: 0 0 1em 0;
+  text-align: center;
+  font-family: "Courier New", serif;
+  font-weight: bold;
+  font-size: 1em;
+}
+
+/*CONTACT PAGE ELEMENTS*/
+#contact-info {
+  text-align: center;
+}
+#contactForm {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  padding: 2em;
+  background-color: var(--teal);
+  color: #fff;
+}
+#contactForm input,
+#contactForm textarea {
+  padding: 0.5em;
+  font-family: "Montserrat", sans-serif;
+  border-radius: 2px;
+  border: none;
+  margin: 1em 0;
+  text-align: center;
+}
+#contactForm p {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+#contactButton {
+  transition: 0.3s ease;
+  display: inline-block;
+  margin: 1em 0;
+  padding: 0.5em 1.2em;
+  border: none;
+  border-radius: 5px;
+  font-family: "Acme", serif;
+  font-size: 1.2em;
+  text-align: center;
+  background-color: var(--white);
+  color: var(--teal);
+}
+#contactButton:hover {
+  background-color: #84a9a5;
+  color: #fff;
+}
+#map iframe {
+  /*Google map*/
+  margin: 1.5em;
+  width: 90%;
+  height: auto;
+}
+/*LEGAL PAGE ELEMENTS*/
+.legalSection {
+  width: 90%;
+  margin: 1.5em 0;
+  padding: 1em;
+  border: solid #fff 5px;
+}
+.legalSection a {
+  color: var(--orange);
+}
+
+@media screen and (min-width: 700px) {
+  /******************************************
+*     Tablet and small computer size      *
+*            700px to 1220px.             *
+*          Inherits from: Phone           *
+******************************************/
+  /*Home page*/
+  #signupText {
+    line-height: 1.8em;
+    font-size: 1.2em;
+  }
+  .newsButton {
+    left: 44%;
+  }
+  /*Gallery*/
+  .galleryVideo iframe {
+    min-height: 300px;
+  }
+  /*Contact page*/
+  #map iframe {
+    width: 70%;
+  }
+  /*Legal page*/
+  .legalSection {
+    width: 70%;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  #headerPhone {
+    display: none;
+  }
+  #headerLaptop {
+    display: block;
+  }
+  .row {
+    flex-direction: row;
+  }
+
+  /*NAVIGATION*/
+  #hamburger-nav {
+    display: none;
+  }
+  #navBar {
+    display: grid;
+    grid-template-columns: 5em auto 5em;
+    padding: 1em 2em;
+    min-height: 50px;
+    background: var(--teal);
+    color: #fff;
+    font-size: 1.2em;
+  }
+  #navBar ul {
+    grid-column: 2;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: auto;
+    justify-content: center;
+    align-items: center;
+  }
+  #navBar ul li {
+    display: inline;
+    border-radius: 20px;
+    padding: 0.5em;
+    text-align: center;
+    transition: 0.3s ease;
+  }
+  #navBar ul li:hover {
+    background: #84a9a5;
+  }
+  #navBar h1 {
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    font-style: italic;
+    letter-spacing: 2px;
+  }
+  #hoku-title {
+    grid-column: 3;
+    grid-row: 1;
+  }
+  #hoku-title:hover {
+    background: var(--teal) !important;
+  }
+  .left {
+    text-align: left;
+  }
+  .right {
+    text-align: right;
+  }
+
+  /*FOOTER*/
+  .mainFooter {
+    flex-flow: row wrap;
+  }
+  .contactIcon {
+    max-width: 60px;
+    min-width: 50px;
+  }
+  .footerSection {
+    flex: 33%;
+  }
+  .mainFooter span {
+    flex: 100%;
+    max-width: 50%;
+  }
+
+  /*HOME PAGE*/
+  .quickAbout {
+    flex: 60%;
+    padding: 2em;
+  }
+  .quickAbout p {
+    padding: 2em 0;
+  }
+  .asideImage {
+    flex: 40%;
+  }
+  .asideImage img {
+    width: 90%;
+    border: none;
+  }
+  .signUp {
+    min-height: 300px;
+  }
+  #banner {
+    width: 80%;
+    margin: 2em 0;
+  }
+  #newsEvents .container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .newsBlock {
+    flex: 25%;
+    margin: 1em;
+  }
+  /*ABOUT PAGE*/
+  #practice-section {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    padding: 2em 4em;
+  }
+  .aboutArticle {
+    flex: 33%;
+    margin: 2em 0;
+  }
+  /*GALLERY PAGE*/
+  .gallery {
+    flex-flow: row wrap;
+  }
+  .galleryVideo,
+  .galleryImage {
+    width: auto;
+    max-width: 40%;
+    margin: 1em;
+  }
+  /*CONTACT PAGE*/
+  #contactForm input,
+  textarea {
+    width: 90%;
+  }
+  /*LEGAL PAGE*/
+  .legalSection {
+    flex: 25%;
+    margin: 2em;
+  }
+}
+
+/*
+COLORS USED:
+Blue = #638481 rgb(99, 132, 129)
+Orange = #d77729 rgb(215, 119, 41)
+Light Gray = #e1e1e1 rgb(225, 225, 225)
+Dark Gray = #6b6b6b rgb(107, 107, 107)
+*/
